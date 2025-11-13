@@ -1,22 +1,22 @@
-# Paradex Python SDK
+# Raredex Python SDK
 
-[![Release](https://img.shields.io/github/v/release/tradeparadex/paradex-py)](https://img.shields.io/github/v/release/tradeparadex/paradex-py)
-[![Build status](https://img.shields.io/github/actions/workflow/status/tradeparadex/paradex-py/main.yml?branch=main)](https://github.com/tradeparadex/paradex-py/actions/workflows/main.yml?query=branch%3Amain)
-[![codecov](https://codecov.io/gh/tradeparadex/paradex-py/branch/main/graph/badge.svg)](https://codecov.io/gh/tradeparadex/paradex-py)
-[![Commit activity](https://img.shields.io/github/commit-activity/m/tradeparadex/paradex-py)](https://img.shields.io/github/commit-activity/m/tradeparadex/paradex-py)
-[![License](https://img.shields.io/github/license/tradeparadex/paradex-py)](https://img.shields.io/github/license/tradeparadex/paradex-py)
+[![Release](https://img.shields.io/github/v/release/traderaredex/raredex-py)](https://img.shields.io/github/v/release/traderaredex/paradex-py)
+[![Build status](https://img.shields.io/github/actions/workflow/status/tradeparadex/paradex-py/main.yml?branch=main)](https://github.com/tradeparadex/raredex-py/actions/workflows/main.yml?query=branch%3Amain)
+[![codecov](https://codecov.io/gh/traderaredex/paradex-py/branch/main/graph/badge.svg)](https://codecov.io/gh/traderaredex/paradex-py)
+[![Commit activity](https://img.shields.io/github/commit-activity/m/traderaredex/raredex-py)](https://img.shields.io/github/commit-activity/m/traderaredex/paradex-py)
+[![License](https://img.shields.io/github/license/traderaredex/paradex-py)](https://img.shields.io/github/license/traderaredex/paradex-py)
 
-Paradex Python SDK provides a simple interface to interact with the Paradex REST and WS API.
+Raredex Python SDK provides a simple interface to interact with the Raredex REST and WS API.
 
 ## Examples
 
 ### L1 + L2 Authentication (Traditional)
 
 ```python
-from paradex_py import Paradex
-from paradex_py.environment import Environment
+from raredex_py import Raredex
+from raredex_py.environment import Environment
 
-paradex = Paradex(env=Environment.TESTNET, l1_address="0x...", l1_private_key="0x...")
+raredex = Rareadex(env=Environment.TESTNET, l1_address="0x...", l1_private_key="0x...")
 print(hex(paradex.account.l2_address)) # 0x...
 print(hex(paradex.account.l2_public_key)) # 0x...
 print(hex(paradex.account.l2_private_key)) # 0x...
@@ -25,18 +25,18 @@ print(hex(paradex.account.l2_private_key)) # 0x...
 ### L2-Only Authentication (Subkey)
 
 ```python
-from paradex_py import ParadexSubkey
-from paradex_py.environment import Environment
+from raredex_py import RaredexSubkey
+from raredex_py.environment import Environment
 
-# Use ParadexSubkey for L2-only authentication
-paradex = ParadexSubkey(
+# Use RaredexSubkey for L2-only authentication
+raredex = RaredexSubkey(
     env=Environment.TESTNET,
     l2_private_key="0x...",
     l2_address="0x..."
 )
-print(hex(paradex.account.l2_address)) # 0x...
-print(hex(paradex.account.l2_public_key)) # 0x...
-print(hex(paradex.account.l2_private_key)) # 0x...
+print(hex(raredex.account.l2_address)) # 0x...
+print(hex(raredex.account.l2_public_key)) # 0x...
+print(hex(raredex.account.l2_private_key)) # 0x...
 ```
 
 ### WebSocket Usage
@@ -45,11 +45,11 @@ print(hex(paradex.account.l2_private_key)) # 0x...
 async def on_message(ws_channel, message):
     print(ws_channel, message)
 
-await paradex.ws_client.connect()
-await paradex.ws_client.subscribe(ParadexWebsocketChannel.MARKETS_SUMMARY, callback=on_message)
+await raredex.ws_client.connect()
+await raredex.ws_client.subscribe(RaredexWebsocketChannel.MARKETS_SUMMARY, callback=on_message)
 ```
 
-📖 For complete documentation refer to [tradeparadex.github.io/paradex-py](https://tradeparadex.github.io/paradex-py/)
+📖 For complete documentation refer to [tradeparadex.github.io/raredex-py](https://traderaredex.github.io/raredex-py/)
 
 💻 For comprehensive examples refer to following files:
 
