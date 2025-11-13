@@ -3,9 +3,9 @@ import os
 
 from starknet_py.common import int_from_hex
 
-from paradex_py import Paradex
-from paradex_py.api.ws_client import ParadexWebsocketChannel
-from paradex_py.environment import TESTNET
+from raredex_py import Raredex
+from raredex_py.api.ws_client import ParadexWebsocketChannel
+from raredex_py.environment import TESTNET
 
 # Environment variables
 TEST_L1_ADDRESS = os.getenv("L1_ADDRESS", "")
@@ -14,18 +14,18 @@ LOG_FILE = os.getenv("LOG_FILE", "FALSE").lower() == "true"
 
 
 if LOG_FILE:
-    from paradex_py.common.file_logging import file_logger
+    from raredex_py.common.file_logging import file_logger
 
     logger = file_logger
     logger.info("Using file logger")
 else:
-    from paradex_py.common.console_logging import console_logger
+    from raredex_py.common.console_logging import console_logger
 
     logger = console_logger
     logger.info("Using console logger")
 
 
-async def callback_general(ws_channel: ParadexWebsocketChannel, message: dict) -> None:
+async def callback_general(ws_channel: RaredexWebsocketChannel, message: dict) -> None:
     message.get("params", {}).get("channel")
     market = message.get("params", {}).get("data", {}).get("market")
     logger.info(f"callback_general(): Channel:{ws_channel} market:{market} message:{message}")
