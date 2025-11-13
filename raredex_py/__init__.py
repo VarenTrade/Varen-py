@@ -1,2 +1,2 @@
-from .paradex import *  # noqa: F403
-from .paradex_subkey import *  # noqa: F403
+from .raredex import *  # noqa: F403
+from .raredex_subkey import *  # noqa: F403
