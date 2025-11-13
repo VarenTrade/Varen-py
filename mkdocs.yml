@@ -1,0 +1,54 @@
+site_name: "Paradex Python SDK" # via logo
+repo_url: https://github.com/tradeparadex/paradex-py
+site_url: https://tradeparadex.github.io/paradex-py
+site_description: Paradex Python SDK
+site_author: Paradex
+edit_uri: edit/main/docs/
+repo_name: tradeparadex/paradex-py
+
+plugins:
+  - search
+  - privacy
+  - autorefs
+  - mkdocstrings:
+      handlers:
+        python:
+          setup_commands:
+            - import sys
+            - sys.path.append('../')
+
+theme:
+  name: material
+  nav_style: dark
+  logo: assets/paradex-light.svg
+  font:
+    text: Roboto
+    code: Roboto Mono
+  features:
+    - navigation.top
+  palette:
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+      accent: deep purple
+  icon:
+    repo: fontawesome/brands/github
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/tradeparadex/paradex-py
+    - icon: fontawesome/brands/python
+      link: https://pypi.org/project/paradex-py
+  generator: false
+
+markdown_extensions:
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex:
+      generic: true
+  - admonition
+  - attr_list
+
+extra_css:
+  - assets/styles.css
