@@ -9,7 +9,7 @@ You can contribute in many ways:
 
 ## Report Bugs
 
-Report bugs at https://github.com/tradeparadex/paradex-py/issues
+Report bugs at https://github.com/traderaredex/paradex-py/issues
 
 If you are reporting a bug, please include:
 
