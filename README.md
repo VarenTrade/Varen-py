@@ -1,42 +1,39 @@
-# Raredex Python SDK
+# Varen Python SDK
 
-[![Release](https://img.shields.io/github/v/release/traderaredex/raredex-py)](https://img.shields.io/github/v/release/traderaredex/paradex-py)
-[![Build status](https://img.shields.io/github/actions/workflow/status/tradeparadex/paradex-py/main.yml?branch=main)](https://github.com/tradeparadex/raredex-py/actions/workflows/main.yml?query=branch%3Amain)
-[![codecov](https://codecov.io/gh/traderaredex/paradex-py/branch/main/graph/badge.svg)](https://codecov.io/gh/traderaredex/paradex-py)
-[![Commit activity](https://img.shields.io/github/commit-activity/m/traderaredex/raredex-py)](https://img.shields.io/github/commit-activity/m/traderaredex/paradex-py)
-[![License](https://img.shields.io/github/license/traderaredex/paradex-py)](https://img.shields.io/github/license/traderaredex/paradex-py)
+<img width="1024" height="1024" alt="image" src="https://github.com/user-attachments/assets/54be36ca-a9df-479c-a59d-453249c95187" />
 
-Raredex Python SDK provides a simple interface to interact with the Raredex REST and WS API.
+
+Varen Python SDK provides a simple interface to interact with the Varen REST and WS API.
 
 ## Examples
 
 ### L1 + L2 Authentication (Traditional)
 
 ```python
-from raredex_py import Raredex
-from raredex_py.environment import Environment
+from varen_py import Varen
+from varen_py.environment import Environment
 
-raredex = Rareadex(env=Environment.TESTNET, l1_address="0x...", l1_private_key="0x...")
-print(hex(raredex.account.l2_address)) # 0x...
-print(hex(raredex.account.l2_public_key)) # 0x...
-print(hex(raredex.account.l2_private_key)) # 0x...
+varen = Rareadex(env=Environment.TESTNET, l1_address="0x...", l1_private_key="0x...")
+print(hex(varen.account.l2_address)) # 0x...
+print(hex(varen.account.l2_public_key)) # 0x...
+print(hex(varen.account.l2_private_key)) # 0x...
 ```
 
 ### L2-Only Authentication (Subkey)
 
 ```python
-from raredex_py import RaredexSubkey
-from raredex_py.environment import Environment
+from varen_py import VarenSubkey
+from varen_py.environment import Environment
 
-# Use RaredexSubkey for L2-only authentication
-raredex = RaredexSubkey(
+# Use VarenSubkey for L2-only authentication
+varen = VarenSubkey(
     env=Environment.TESTNET,
     l2_private_key="0x...",
     l2_address="0x..."
 )
-print(hex(raredex.account.l2_address)) # 0x...
-print(hex(raredex.account.l2_public_key)) # 0x...
-print(hex(raredex.account.l2_private_key)) # 0x...
+print(hex(varen.account.l2_address)) # 0x...
+print(hex(varen.account.l2_public_key)) # 0x...
+print(hex(varen.account.l2_private_key)) # 0x...
 ```
 
 ### WebSocket Usage
@@ -45,11 +42,11 @@ print(hex(raredex.account.l2_private_key)) # 0x...
 async def on_message(ws_channel, message):
     print(ws_channel, message)
 
-await raredex.ws_client.connect()
-await raredex.ws_client.subscribe(RaredexWebsocketChannel.MARKETS_SUMMARY, callback=on_message)
+await varen.ws_client.connect()
+await varen.ws_client.subscribe(VarenWebsocketChannel.MARKETS_SUMMARY, callback=on_message)
 ```
 
-📖 For complete documentation refer to [tradeparadex.github.io/raredex-py](https://traderaredex.github.io/raredex-py/)
+📖 For complete documentation refer to [varentrade.github.io/varen-py](https://varentrade.github.io/varen-py/)
 
 💻 For comprehensive examples refer to following files:
 
