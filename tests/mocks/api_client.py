@@ -1,14 +1,14 @@
-from paradex_py.api.models import SystemConfig, SystemConfigSchema
+from varen_py.api.models import SystemConfig, SystemConfigSchema
 
 MOCK_CONFIG = {
     "starknet_gateway_url": "https://potc-testnet-sepolia.starknet.io",
-    "starknet_fullnode_rpc_url": "https://pathfinder.api.testnet.paradex.trade/rpc/v0.5",
+    "starknet_fullnode_rpc_url": "https://pathfinder.api.testnet.varen.trade/rpc/v0.5",
     "starknet_chain_id": "PRIVATE_SN_POTC_SEPOLIA",
-    "block_explorer_url": "https://voyager.testnet.paradex.trade/",
-    "paraclear_address": "0x286003f7c7bfc3f94e8f0af48b48302e7aee2fb13c23b141479ba00832ef2c6",
-    "paraclear_decimals": 8,
-    "paraclear_account_proxy_hash": "0x3530cc4759d78042f1b543bf797f5f3d647cde0388c33734cf91b7f7b9314a9",
-    "paraclear_account_hash": "0x41cb0280ebadaa75f996d8d92c6f265f6d040bb3ba442e5f86a554f1765244e",
+    "block_explorer_url": "https://voyager.testnet.varen.trade/",
+    "clear_address": "0x286003f7c7bfc3f94e8f0af48b48302e7aee2fb13c23b141479ba00832ef2c6",
+    "clear_decimals": 8,
+    "clear_account_proxy_hash": "0x3530cc4759d78042f1b543bf797f5f3d647cde0388c33734cf91b7f7b9314a9",
+    "clear_account_hash": "0x41cb0280ebadaa75f996d8d92c6f265f6d040bb3ba442e5f86a554f1765244e",
     "oracle_address": "0x2c6a867917ef858d6b193a0ff9e62b46d0dc760366920d631715d58baeaca1f",
     "bridged_tokens": [
         {
