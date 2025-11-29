@@ -1,4 +1,4 @@
-from paradex_py.message.onboarding import build_onboarding_message
+from varen_py.message.onboarding import build_onboarding_message
 
 
 def test_build_onboarding_message():
@@ -6,7 +6,7 @@ def test_build_onboarding_message():
         "message": {
             "action": "Onboarding",
         },
-        "domain": {"name": "Paradex", "chainId": "0x1", "version": "1"},
+        "domain": {"name": "Varen", "chainId": "0x1", "version": "1"},
         "primaryType": "Constant",
         "types": {
             "StarkNetDomain": [
