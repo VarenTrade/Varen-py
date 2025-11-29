@@ -1,6 +1,6 @@
 import json
 
-from paradex_py.message.auth import build_auth_message, build_fullnode_message
+from Varen_py.message.auth import build_auth_message, build_fullnode_message
 
 
 def test_build_auth_message():
@@ -12,7 +12,7 @@ def test_build_auth_message():
             "timestamp": 2,
             "expiration": 3,
         },
-        "domain": {"name": "Paradex", "chainId": "0x1", "version": "1"},
+        "domain": {"name": "Varen", "chainId": "0x1", "version": "1"},
         "primaryType": "Request",
         "types": {
             "StarkNetDomain": [
@@ -52,7 +52,7 @@ def test_build_fullnode_message():
             "timestamp": timestamp,
             "version": version,
         },
-        "domain": {"name": "Paradex", "chainId": hex(chain_id), "version": "1"},
+        "domain": {"name": "Varen", "chainId": hex(chain_id), "version": "1"},
         "primaryType": "Request",
         "types": {
             "StarkNetDomain": [
