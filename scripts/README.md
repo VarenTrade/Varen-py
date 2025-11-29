@@ -1,12 +1,12 @@
 # Scripts
 
-This directory contains utility scripts for the Raredex Python SDK.
+This directory contains utility scripts for the Varen Python SDK.
 
 ## Model Generation
  
 ### `generate_models_simple.py`
 
-Fetches the Raredex API OpenAPI specification and generates Pydantic models.
+Fetches the Varen API OpenAPI specification and generates Pydantic models.
 
 **Usage:**
 
@@ -24,22 +24,22 @@ uv run python scripts/generate_models_simple.py --spec-file path/to/spec.json --
 **Options:**
 
 - `--spec-file`: Path to local JSON spec file (if not provided, fetches from API)
-- `--output-dir`: Output directory for generated models (default: `raredex_py/api/generated`)
+- `--output-dir`: Output directory for generated models (default: `varen_py/api/generated`)
 
 **What it does:**
 
-1. Fetches the Swagger 2.0 spec from `https://api.prod.raredex.trade/swagger/doc.json` OR uses a provided JSON file
+1. Fetches the Swagger 2.0 spec from `https://api.prod.varen.trade/swagger/doc.json` OR uses a provided JSON file
 2. Attempts to convert it to OpenAPI 3.0 using `swagger2openapi` (if available)
 3. Generates Pydantic v2 models using `datamodel-code-generator`
-4. Outputs models to `raredex_py/api/generated/` (or custom directory)
+4. Outputs models to `varen_py/api/generated/` (or custom directory)
 5. Cleans up temporary files
 
 **Generated files:**
 
-- `raredex_py/api/generated/model.py` - Base models
-- `raredex_py/api/generated/requests.py` - Request models
-- `raedex_py/api/generated/responses.py` - Response models
-- `raredex_py/api/generated/__init__.py` - Package initialization
+- `varen_py/api/generated/model.py` - Base models
+- `varen_py/api/generated/requests.py` - Request models
+- `varen_py/api/generated/responses.py` - Response models
+- `varen_py/api/generated/__init__.py` - Package initialization
 
 ## Dependencies
 
