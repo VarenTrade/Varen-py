@@ -1,7 +1,7 @@
 from decimal import Decimal
 
-from paradex_py.common.order import Order, OrderSide, OrderType
-from paradex_py.message.order import build_order_message
+from varen_py.common.order import Order, OrderSide, OrderType
+from varen_py.message.order import build_order_message
 
 
 def test_build_onboarding_message():
@@ -15,7 +15,7 @@ def test_build_onboarding_message():
         signature_timestamp=1634736000000,
     )
     assert build_order_message(1, order) == {
-        "domain": {"name": "Paradex", "chainId": "0x1", "version": "1"},
+        "domain": {"name": "Varen", "chainId": "0x1", "version": "1"},
         "primaryType": "Order",
         "types": {
             "StarkNetDomain": [
