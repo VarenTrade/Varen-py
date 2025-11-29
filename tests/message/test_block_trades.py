@@ -1,7 +1,7 @@
 from decimal import Decimal
 
-from paradex_py.common.order import Order, OrderSide, OrderType
-from paradex_py.message.block_trades import BlockTrade, Trade, build_block_trade_message
+from varen_py.common.order import Order, OrderSide, OrderType
+from varen_py.message.block_trades import BlockTrade, Trade, build_block_trade_message
 
 
 def test_trade_class():
@@ -124,7 +124,7 @@ def test_build_block_trade_message():
     message = build_block_trade_message(1, block_trade)
 
     expected = {
-        "domain": {"name": "Paradex", "chainId": "0x1", "version": "1"},
+        "domain": {"name": "varen", "chainId": "0x1", "version": "1"},
         "primaryType": "BlockTrade",
         "types": {
             "StarkNetDomain": [
