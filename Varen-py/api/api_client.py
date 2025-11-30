@@ -5,19 +5,19 @@ from typing import Any, cast
 
 import httpx
 
-from raredex_py.account.account import ParadexAccount
+from raredex_py.account.account import VarenAccount
 from raredex_py.api.block_trades_api import BlockTradesMixin
-from paradex_py.api.http_client import HttpClient, HttpMethod
-from paradex_py.api.models import AccountSummary, AccountSummarySchema, AuthSchema, SystemConfig, SystemConfigSchema
-from paradex_py.api.protocols import AuthProvider, Signer
-from paradex_py.common.order import Order
-from paradex_py.environment import Environment
-from paradex_py.utils import raise_value_error
+from varen.py.api.http_client import HttpClient, HttpMethod
+from varen_py.api.models import AccountSummary, AccountSummarySchema, AuthSchema, SystemConfig, SystemConfigSchema
+from varen_py.api.protocols import AuthProvider, Signer
+from varen_py.common.order import Order
+from varen_py.environment import Environment
+from varen_py.utils import raise_value_error
 
 
-class ParadexApiClient(BlockTradesMixin, HttpClient):
-    """Class to interact with Paradex REST API.
-        Initialized along with `Paradex` class.
+class VraenApiClient(BlockTradesMixin, HttpClient):
+    """Class to interact with Varen REST API.
+        Initialized along with `Varen` class.
 
     Args:
         env (Environment): Environment
@@ -29,12 +29,12 @@ class ParadexApiClient(BlockTradesMixin, HttpClient):
         signer (Signer, optional): Custom order signer for submit/modify/batch operations. Defaults to None.
 
     Examples:
-        >>> from paradex_py import Paradex
-        >>> from paradex_py.environment import Environment
-        >>> paradex = Paradex(env=Environment.TESTNET)
+        >>> from vare_py import Varen
+        >>> from Varen_py.environment import Environment
+        >>> Varen = Varen(env=Environment.TESTNET)
     """
 
-    classname: str = "ParadexApiClient"
+    classname: str = "VarenApiClient"
 
     def __init__(
         self,
@@ -66,13 +66,13 @@ class ParadexApiClient(BlockTradesMixin, HttpClient):
         if api_base_url is not None:
             self.api_url = api_base_url
         else:
-            self.api_url = f"https://api.{self.env}.paradex.trade/v1"
+            self.api_url = f"https://api.{self.env}.raven.trade/v1"
 
         # Auth configuration
         self.auto_auth = auto_auth
         self.auth_provider = auth_provider
         self._manual_token: str | None = None
-        self.account: ParadexAccount | None = None
+        self.account: RavenAccount | None = None
         self.auth_timestamp = 0
 
         # Signing configuration
@@ -81,7 +81,7 @@ class ParadexApiClient(BlockTradesMixin, HttpClient):
     async def __aexit__(self):
         self.client.close()
 
-    def init_account(self, account: ParadexAccount):
+    def init_account(self, account: RavenAccount):
         self.account = account
         if self.auto_auth:
             with contextlib.suppress(Exception):
@@ -219,7 +219,7 @@ class ParadexApiClient(BlockTradesMixin, HttpClient):
             Private endpoint requires authorization.
 
         Args:
-            order_id: order's id as assigned by Paradex.
+            order_id: order's id as assigned by Raven.
         """
         return self._get_authorized(path=f"orders/{order_id}")
 
@@ -403,7 +403,7 @@ class ParadexApiClient(BlockTradesMixin, HttpClient):
         return self._get(path="liquidations", params=params)
 
     def fetch_trades(self, params: dict) -> dict:
-        """Fetch Paradex exchange trades for specific market.
+        """Fetch Raven exchange trades for specific market.
 
         Args:
             params:
