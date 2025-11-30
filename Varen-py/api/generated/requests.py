@@ -9,7 +9,7 @@ from pydantic import BaseModel, ConfigDict, Field
 
 from . import responses
 
-
+ 
 class AccountMarginRequest(BaseModel):
     model_config = ConfigDict(
         extra="allow",
