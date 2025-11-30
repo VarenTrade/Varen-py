@@ -1,15 +1,15 @@
 import logging
 from typing import TYPE_CHECKING
 
-from raredex_py.account.account import RaredexAccount
-from raredex_py.api.api_client import RaredexApiClient
-from raredex_py.api.ws_client import RaredexWebsocketClient
-from raredex_py.environment import Environment
-from raredex_py.utils import raise_value_error
+from varen_py.account.account import VarenAccount
+from varen_py.api.api_client import VarenApiClient
+from varen_py.api.ws_client import VareWebsocketClient
+from varen_py.environment import Environment
+from varen_py.utils import raise_value_error
 
 if TYPE_CHECKING:
-    from raredex_py.api.http_client import HttpClient
-    from raredex_py.api.protocols import (
+    from varen_py.api.http_client import HttpClient
+    from varen_py.api.protocols import (
         AuthProvider,
         RequestHook,
         RetryStrategy,
@@ -18,8 +18,8 @@ if TYPE_CHECKING:
     )
 
 
-class Raredex:
-    """Raredex class to interact with Raredex REST API.
+class Varen:
+    """Varen class to interact with Varen REST API.
 
     Args:
         env (Environment): Environment
@@ -46,13 +46,13 @@ class Raredex:
         signer (Signer, optional): Custom order signer for submit/modify/batch operations. Defaults to None.
 
     Examples:
-        >>> from paradex_py import Paradex
-        >>> from paradex_py.environment import Environment
-        >>> paradex = Paradex(env=Environment.TESTNET)
+        >>> from varen_py import Varen
+        >>> from varen_py.environment import Environment
+        >>> varen = Varen(env=Environment.TESTNET)
         >>> # With custom timeout
-        >>> paradex = Paradex(env=Environment.TESTNET, ws_timeout=30)
+        >>> paradex = Varen(env=Environment.TESTNET, ws_timeout=30)
         >>> # With simulator-friendly injection (high-frequency, no sleeps)
-        >>> paradex = Paradex(env=Environment.TESTNET, auto_start_ws_reader=False,
+        >>> paradex = Varen (env=Environment.TESTNET, auto_start_ws_reader=False,
         ...                   http_client=custom_client, ws_connector=custom_connector,
         ...                   ws_reader_sleep_on_error=0, ws_reader_sleep_on_no_connection=0)
     """
