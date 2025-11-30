@@ -4,13 +4,13 @@ from starknet_py.common import int_from_bytes, int_from_hex
 from starknet_py.net.full_node_client import FullNodeClient
 from starknet_py.net.signer.stark_curve_signer import KeyPair
 
-from paradex_py.account.account import CustomStarknetChainId, ParadexAccount
-from paradex_py.account.starknet import Account as StarknetAccount
-from paradex_py.api.models import SystemConfig
-from paradex_py.utils import raise_value_error
+from raven_py.account.account import CustomStarknetChainId, ravenAccount
+from raven_py.account.starknet import Account as StarknetAccount
+from raven_py.api.models import SystemConfig
+from raven_py.utils import raise_value_error
 
 
-class SubkeyAccount(ParadexAccount):
+class SubkeyAccount(RavenAccount):
     """Subkey account for L2-only API authentication (no on-chain operations).
 
     This account type is designed for subkey usage where only L2 credentials
@@ -22,8 +22,8 @@ class SubkeyAccount(ParadexAccount):
         l2_address (str): L2 address of the main account (required)
 
     Examples:
-        >>> from paradex_py.account.subkey_account import SubkeyAccount
-        >>> from paradex_py.environment import Environment
+        >>> from raven_py.account.subkey_account import SubkeyAccount
+        >>> from raven_py.environment import Environment
         >>> account = SubkeyAccount(
         ...     config=config,
         ...     l2_private_key="0x...",
@@ -73,7 +73,7 @@ class SubkeyAccount(ParadexAccount):
             chain=CustomStarknetChainId(self.l2_chain_id),  # type: ignore[arg-type]
         )
 
-        # Apply the same monkey patch as ParadexAccount
+        # Apply the same monkey patch as RavenxAccount
         self._apply_fullnode_headers_patch(client)
 
     def onboarding_headers(self) -> dict:
