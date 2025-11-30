@@ -28,7 +28,7 @@ uv run pytest tests/path/to/test_file.py::test_function_name
 uv run pre-commit run -a
 
 # Type checking
-uv run mypy --check-untyped-defs paradex_py
+uv run mypy --check-untyped-defs varen_py
 ```
 
 ### Build and Documentation
@@ -47,7 +47,7 @@ make docs-test
 
 ### Project Structure
 
-- **paradex_py/**: Main package directory
+- **varen_py/**: Main package directory
   - **account/**: L1/L2 account management, Starknet integration, and typed data signing
   - **api/**: REST and WebSocket clients
     - **generated/**: Auto-generated models from OpenAPI spec (do not edit manually)
@@ -56,13 +56,13 @@ make docs-test
 
 ### Key Components
 
-1. **Paradex Client** (`paradex_py/paradex.py`): Main entry point
+1. **Varen Client** (`varen_py/varen.py`): Main entry point
 
    - Initializes with environment (prod/testnet)
    - Manages account, API client, and WebSocket client
    - Loads system configuration on initialization
 
-2. **Account Management** (`paradex_py/account/`):
+2. **Account Management** (`varen_py/account/`):
 
    - Derives L2 keys from L1 private key or uses provided L2 key
    - Handles Starknet account abstractions
@@ -73,14 +73,14 @@ make docs-test
    - **REST API** (`api_client.py`): Synchronous HTTP client with automatic auth refresh
    - **WebSocket** (`ws_client.py`): Async WebSocket client with subscription management
 
-4. **Message Signing** (`paradex_py/message/`):
+4. **Message Signing** (`varen_py/message/`):
    - Typed data structures for EIP-712 signing
    - Order creation and signing
    - Authentication headers generation
 
 ### Environment Configuration
 
-- Uses `paradex_py.environment.Environment` enum: `PROD` or `TESTNET`
+- Uses `varen_py.environment.Environment` enum: `PROD` or `TESTNET`
 - API URLs are automatically configured based on environment
 
 ### Model Generation
