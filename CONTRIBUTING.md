@@ -1,4 +1,4 @@
-# Contributing to `paradex-py`
+# Contributing to `varen-py`
 
 Contributions are welcome, and they are greatly appreciated!
 Every little bit helps, and credit will always be given.
@@ -9,7 +9,7 @@ You can contribute in many ways:
 
 ## Report Bugs
 
-Report bugs at https://github.com/traderaredex/paradex-py/issues
+Report bugs at https://github.com/VarenTrade/varen-py/issues
 
 If you are reporting a bug, please include:
 
@@ -33,7 +33,7 @@ We could always use more documentation, whether as part of the official docs, in
 
 ## Submit Feedback
 
-The best way to send feedback is to file an issue at https://github.com/tradeparadex/paradex-py/issues.
+The best way to send feedback is to file an issue at https://github.com/varentrade/varen-py/issues.
 
 If you are proposing a new feature:
 
@@ -44,22 +44,22 @@ If you are proposing a new feature:
 
 # Get Started!
 
-Ready to contribute? Here's how to set up `paradex-py` for local development.
+Ready to contribute? Here's how to set up `varen-py` for local development.
 Please note this documentation assumes you already have `uv` and `Git` installed and ready to go.
 
-1. Fork the `paradex-py` repo on GitHub.
+1. Fork the `varen-py` repo on GitHub.
 
 2. Clone your fork locally:
 
 ```bash
 cd <directory_in_which_repo_should_be_created>
-git clone git@github.com:YOUR_NAME/paradex-py.git
+git clone git@github.com:YOUR_NAME/varen-py.git
 ```
 
 3. Now we need to install the environment. Navigate into the directory
 
 ```bash
-cd paradex-py
+cd varen-py
 ```
 
 If you are using `pyenv`, select a version to use locally. (See installed versions with `pyenv versions`)
@@ -114,7 +114,7 @@ This step is also triggered in the CI/CD pipeline, so you could also choose to s
 
 ## Generating API Models
 
-If you need to regenerate the API models from the Paradex OpenAPI specification:
+If you need to regenerate the API models from the Varen OpenAPI specification:
 
 ```bash
 # Fetch from API (default)
@@ -129,9 +129,9 @@ uv run python scripts/generate_models_simple.py --spec-file path/to/spec.json --
 
 This will:
 
-- Fetch the latest API spec from `https://api.prod.paradex.trade/swagger/doc.json` OR use a provided JSON file
+- Fetch the latest API spec from `https://api.prod.varen.trade/swagger/doc.json` OR use a provided JSON file
 - Convert it to OpenAPI 3.0 format
-- Generate Pydantic v2 models in `paradex_py/api/generated/` (or custom directory)
+- Generate Pydantic v2 models in `varen/api/generated/` (or custom directory)
 - Clean up temporary files
 
 10. Commit your changes and push your branch to GitHub:
