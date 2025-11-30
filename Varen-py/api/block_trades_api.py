@@ -2,12 +2,12 @@ from typing import Any, Protocol
 
 from pydantic import TypeAdapter
 
-from paradex_py.api.generated.requests import (
+from Varen_py.api.generated.requests import (
     BlockExecuteRequest,
     BlockOfferRequest,
     BlockTradeRequest,
 )
-from paradex_py.api.generated.responses import (
+from Varen_py.api.generated.responses import (
     ApiError,
     APIResults,
     BlockTradeDetailFullResponse,
@@ -40,7 +40,7 @@ class ApiClientProtocol(Protocol):
 class BlockTradesMixin:
     """Mixin class for Block Trades API endpoints.
 
-    This mixin provides all block trades functionality to be mixed into ParadexApiClient.
+    This mixin provides all block trades functionality to be mixed into VarenApiClient.
     """
 
     # Type hint for the mixin to indicate it expects these methods
