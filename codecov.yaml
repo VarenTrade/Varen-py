@@ -3,7 +3,7 @@
   round: down
   precision: 1
   status:
-    project:
+    project: 
       default:
         target: 90%
         threshold: 0.5%
