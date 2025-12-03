@@ -8,7 +8,7 @@ This directory contains utility scripts for the Varen Python SDK.
 
 Fetches the Varen API OpenAPI specification and generates Pydantic models.
 
-**Usage:**
+**Usage:** 
 
 ```bash
 # Fetch from API (default)
