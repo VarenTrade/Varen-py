@@ -24,7 +24,7 @@ WORKDIR /home/ubuntu
 
 # Copy project files with ubuntu ownership
 COPY --chown=ubuntu:ubuntu pyproject.toml uv.lock* ./
-COPY --chown=ubuntu:ubuntu . ./paradex-py/
+COPY --chown=ubuntu:ubuntu . ./varen-py/
 
 # Switch to ubuntu user
 USER ubuntu:ubuntu
@@ -34,4 +34,4 @@ ENV VIRTUAL_ENV=/home/ubuntu/.venv
 
 # Project initialization
 RUN uv sync --no-install-project --quiet && \
-    uv pip install 'file:///home/ubuntu/paradex-py#egg=paradex-py'
+    uv pip install 'file:///home/ubuntu/varen-py#egg=varen-py'
