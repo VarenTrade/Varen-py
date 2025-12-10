@@ -2,7 +2,7 @@
 requires = ["hatchling"]
 build-backend = "hatchling.build"
  
-# Add project metadata for PEP 621 needed for building
+# Add project metadata for PEP 621 needed for building 
 [project]
 name = "varen_py"
 version = "0.5.0rc2"
