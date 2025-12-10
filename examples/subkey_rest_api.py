@@ -5,7 +5,7 @@ Example script demonstrating L2-only REST API usage with VarenSubkey.
 This example shows how to use REST API functionality with only L2 credentials (subkey mode),
 without requiring L1 Ethereum address or private key.
 
-Requirements:
+Requirements: 
 - L2_PRIVATE_KEY: Starknet private key for the subkey
 - L2_ADDRESS: L2 address of the main account (not the subkey address)
 
