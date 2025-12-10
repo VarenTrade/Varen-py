@@ -2,7 +2,7 @@ site_name: "Varen Python SDK" # via logo
 repo_url: https://github.com/VarenTrade/paradex-py
 site_url: https://varentrade.github.io/varen-py
 site_description: Varen Python SDK
-site_author: Varen
+site_author: Varen 
 edit_uri: edit/main/docs/
 repo_name: varentrade/varen-py
 
