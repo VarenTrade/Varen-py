@@ -6,7 +6,7 @@ This directory contains utility scripts for the Varen Python SDK.
  
 ### `generate_models_simple.py`
 
-Fetches the Varen API OpenAPI specification and generates Pydantic models.
+Fetches the Varen API OpenAPI specification and generates Pydantic models. 
 
 **Usage:** 
 
